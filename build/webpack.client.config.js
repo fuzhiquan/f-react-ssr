@@ -8,7 +8,7 @@ module.exports = merge(baseConfig, {
         index: path.resolve(__dirname, '../client/index.js')
     },
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../public'),
         filename: 'client.js'
     }
 })
