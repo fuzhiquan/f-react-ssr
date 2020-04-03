@@ -2,6 +2,7 @@ import React from 'react'
 import {StaticRouter} from 'react-router-dom'
 import {renderToString} from 'react-dom/server'
 import routers from '../router'
+import Header from '../component/header'
 const express = require('express')
 const path = require('path')
 
@@ -10,9 +11,12 @@ app.use(express.static('public'))
 
 app.get('*', function(req, res) {
     const domStr = renderToString(<StaticRouter context={{}} location={req.path}>
-        {
-            routers
-        }
+        <React.Fragment>
+            <Header/>
+            <div>
+                {routers}
+            </div>
+        </React.Fragment>
     </StaticRouter>)
     res.setHeader('Content-Type', 'text/html;charset=utf-8')
     res.end(`
