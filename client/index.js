@@ -1,5 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Home from '../containers/home'
+import {BrowserRouter} from 'react-router-dom'
+import routers from '../router'
 
-ReactDOM.hydrate(<Home/>, document.getElementById('root'))
+ReactDOM.hydrate(<BrowserRouter>
+    {
+        routers
+    }
+</BrowserRouter>, document.getElementById('root'))
