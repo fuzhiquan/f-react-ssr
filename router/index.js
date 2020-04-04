@@ -1,9 +1,18 @@
-import React from 'react'
-import {Route} from 'react-router-dom'
 import Home from '../page/home'
 import Login from '../page/login'
 
-export default <React.Fragment>
-    <Route path='/' exact component={Home}/>
-    <Route path='/login' component={Login}/>
-</React.Fragment>
+export default [
+    {
+        path: '/',
+        key: '/',
+        exact: true,
+        component: Home
+    },
+    {
+        path: '/login',
+        key: '/login',
+        exact: true,
+        component: Login,
+        loadData: Login.loadData //用来服务端加载数据，如果有loadData的属性那么就需要在服务端请求并渲染完成后反给客户端
+    }
+]

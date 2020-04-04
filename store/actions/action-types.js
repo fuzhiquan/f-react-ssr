@@ -1,2 +1,2 @@
 export const HOME_ADD = 'HOME_ADD'
-export const LOGIN_MINUS = 'LOGIN_MINUS'
+export const LOGIN_REQUEST_SUCCESS = 'LOGIN_REQUEST_SUCCESS'
