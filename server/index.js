@@ -47,10 +47,12 @@ app.get('*', function(req, res) {
                 </head>
                 <body>
                     <div id='root'>${domStr}</div>
-                    <script src='/client.js'></script>
                     <script>
-                        window.context = {state: ${JSON.stringify(store.getState)}}
+                        window.context = {
+                            state:${JSON.stringify(store.getState())}
+                        }
                     </script>
+                    <script src='/client.js'></script>
                 </body>
             </html>
         `)
